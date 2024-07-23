@@ -1,0 +1,57 @@
+{% extends "index.html" %}
+{% load static %}
+
+{% block nav %}
+<ul>
+    <li class="active"><a href="{% url 'home_page' %}">Home</a></li>
+    <li><a href="{% url 'activity_list' %}">Activities</a></li>
+    {% if user.is_authenticated %}
+    <li><a href="{% url 'my_booking_view' %}">My Bookings</a></li>
+    {% endif %}
+
+</ul>      
+{% endblock %}
+
+{% block content %}
+    <section class="hero-section set-bg" data-setbg="{% static 'img/hero-bg.jpg' %}">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="hero-text">
+                        <span></span>
+                        <h1>NCI Sports Club</h1>
+                        <p>NCI comes packed with the user-friendly Sports Club</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Hero Section End -->
+
+    <!-- About Section Begin -->
+    <section class="about-section spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="about-pic">
+                        <img src="{% static 'img/about-pic.jpg' %}" alt="">
+                        <a href="https://www.youtube.com/watch?v=SlPhMPnQ58k" class="play-btn video-popup">
+                            <img src="{% static 'img/play.png' %}" alt="">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="about-text">
+                        <h2>Story About Us</h2>
+                        <p class="first-para">As NCI Sports Club, we pride ourselves on providing a vibrant community hub for sports enthusiasts of all ages and abilities. From our state-of-the-art facilities to our diverse range of programs and events, we strive to foster a welcoming environment where individuals can pursue their fitness goals, engage in friendly competition, and build lasting connections. Whether you're a seasoned athlete or just starting your fitness journey, there's something for everyone at NCI Sports Club.</p>
+                       
+                        <a href="" class="primary-btn">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- About Section End -->
+
+
+{% endblock %}
