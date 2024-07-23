@@ -51,7 +51,7 @@ class Migration(migrations.Migration):
                     "activity",
                     models.ForeignKey(
                         on_delete=django.db.models.deletion.CASCADE,
-                        to="clubapp.activitiesmodel",
+                        to="bookingapp.activitiesmodel",
                     ),
                 ),
                 (

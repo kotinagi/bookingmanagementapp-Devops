@@ -7,7 +7,7 @@ import django.utils.timezone
 class Migration(migrations.Migration):
 
     dependencies = [
-        ("clubapp", "0002_rename_end_time_bookedactivity_date_of_booking_and_more"),
+        ("bookingapp", "0002_rename_end_time_bookedactivity_date_of_booking_and_more"),
     ]
 
     operations = [

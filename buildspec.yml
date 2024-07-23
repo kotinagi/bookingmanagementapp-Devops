@@ -10,7 +10,7 @@ phases :
   pre_build:
     commands:
       - python --version
-      - pylint club_management/**/*.py || true
+      - pylint booking_management/**/*.py || true
 
 artifacts:
    files:

@@ -4,7 +4,7 @@ from django.db import IntegrityError
 from django.views import View
 from django.urls import reverse
 from django.contrib.auth.models import User
-from clubapp.models import ActivitiesModel, BookedActivity
+from bookingapp.models import ActivitiesModel, BookedActivity
 from django.contrib.auth import logout
 
 # Create your views here.

@@ -1,5 +1,5 @@
 """
-URL configuration for club_management project.
+URL configuration for booking_management project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/4.2/topics/http/urls/
@@ -20,6 +20,6 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
-    path("", include("clubapp.urls")),
+    path("", include("bookingapp.urls")),
     path("admin/", admin.site.urls),
 ]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
