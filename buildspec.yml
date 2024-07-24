@@ -1,17 +1,28 @@
 version: 0.2
-phases :
+phases:
   install:
     runtime-versions:
       python: 3.11
     commands:
       - pip install --upgrade pip
       - pip install -r requirements.txt pylint
-      
+      - yum update -y
+      - yum install -y jq
   pre_build:
     commands:
       - python --version
+      - python manage.py collectstatic --noinput
       - pylint booking_management/**/*.py || true
-
+      - wget https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-3.3.0.1492-linux.zip
+      - unzip ./sonar-scanner-cli-3.3.0.1492-linux.zip
+      - export PATH=$PATH:./sonar-scanner-3.3.0.1492-linux/bin/
+  build:
+    commands:
+      - sonar-scanner -Dsonar.login=af1cd37774e118299d0cc76ab58200198e66cc5d -Dsonar.host.url=https://sonarcloud.io -Dsonar.projectKey=booking_management -Dsonar.organization=kotinagi || true
+      - sleep 5
+      - curl https://sonarcloud.io/api/qualitygates/project_status?projectKey=booking_management >result.json
+      - cat result.json
+      - if [ $(jq -r '.projectStatus.status' result.json) = ERROR ] ; then $CODEBUILD_BUILD_SUCCEEDING -eq 0 ;fi
 artifacts:
    files:
     - '**/*'
