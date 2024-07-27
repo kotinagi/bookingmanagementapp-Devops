@@ -8,7 +8,7 @@
     <meta name="keywords" content="Gutim, unica, creative, html">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Club Booking</title>
+    <title>Sports Activity Booking</title>
 
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900&display=swap"
@@ -22,12 +22,12 @@
     <link rel="stylesheet" href="{% static 'css/slicknav.min.css' %}" type="text/css">
     <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
 </head>
-<body>
+<body style="background-color:#f9e1e3;">
     <!-- Page Preloder -->
     <div id="preloder">
         <div class="loader"></div>
     </div>
-    <header class="header-section" style="background: #302f2f;">
+    <header class="header-section" style="background:  #1b749e;">
         <div class="container">
             <div class="logo">
                 <a href="{% url 'home_page' %}">
@@ -44,7 +44,7 @@
                 {% endblock %}
                 {% if request.session.user.username %}
                 <a href="#" class="primary-btn signup-btn">{{request.session.user.username}}</a>
-                <a href="{% url 'logout_page' %}" class="signup-btn" style="color: white;">Logout</a>
+                <a href="{% url 'logout_page' %}" class="signup-btn" style="color:#f9e1e3;">Logout</a>
 
                 {% endif %}
             </div>
