@@ -8,7 +8,7 @@
     <meta name="keywords" content="Gutim, unica, creative, html">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Club Booking</title>
+    <title>Sports Activity Booking</title>
 
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900&display=swap"
@@ -28,11 +28,11 @@
       left: 0;
       top: 0;
       width: 100%;
-      border-bottom: 1px solid rgba(34, 31, 31, 0.2);
-      background-color: black;
+      border-bottom: 1px solid rgba(38, 63, 36, 0.2);
+      background-color: #1b749e;
     }
     </style>
-<body>
+<body style="background-color:#f9e1e3;">
     <!-- Page Preloder -->
     <div id="preloder">
         <div class="loader"></div>
@@ -43,7 +43,7 @@
         <div class="container">
             <div class="logo">
                 <a href="{% url 'home_page' %}">
-                    <img src="{% static 'img/logo.png' %}" alt="">
+                  <!-- <img src="{% static 'img/logo.png' %}" alt=""> -->
                 </a>
             </div>
             <div class="nav-menu">
@@ -52,7 +52,7 @@
                     
                     {% endblock %}
                     
-                </nav>
+                </nav>  
                 {% if user.is_authenticated %}
                 <a href="{% url 'user_details' %}" class="primary-btn signup-btn">{{request.user.username}}</a>
                 <a href="{% url 'logout_page' %}" class="signup-btn" style="color: white;">Logout</a>
@@ -66,32 +66,6 @@
     {% block content %}
     
     {% endblock %}
-
-    <footer class="footer-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="contact-option">
-                        <span>Phone</span>
-                        <p>+353 0899698208</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="contact-option">
-                        <span>Address</span>
-                        <p>NCI, IRELAND</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="contact-option">
-                        <span>Email</span>
-                        <p>x23178019@student.ncirl.ie</p>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </footer>
     </body>
     <!-- Js Plugins -->
     <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
