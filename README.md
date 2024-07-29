@@ -1,2 +1,2 @@
-# bookingmanagementapp
+# bookingmanagement
  Activity Booking System
